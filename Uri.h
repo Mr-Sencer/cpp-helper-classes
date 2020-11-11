@@ -2,11 +2,19 @@
  
 #include <map>
 #include <string> 
-#include "string_proc.h"
+
 using namespace std;
 
 class Uri
 {
+protected: bool isWhiteAllSpace(char c) {
+	return	c == 0x20 || c == 0x09 || c == 0x0a || c == 0x0b || c == 0xc || c == 0x0d;
+
+}
+		   bool isNumber(char c)
+		  {
+			  return c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9';
+		  }
 public:  map<string, string> Parameters; 
 		 string connectionMode; 
 		 enum Mode {
@@ -252,3 +260,4 @@ public:void Parse(string url) {
        	   
  
 };
+
